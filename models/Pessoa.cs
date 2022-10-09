@@ -29,7 +29,7 @@ namespace API_QrCode.models
         public Byte? pesVerReconhecimentoFacial { get; set; }
         public Byte? pesHabilitado { get; set; }
         public Byte? pesAutorizante { get; set; }
-        public Byte? pesParentesco { get; set; }
+        public string pesParentesco { get; set; }
         public string PINResponsavel { get; set; }
         public string PINApresentante { get; set; }
         public Int16? ambNumero { get; set; }

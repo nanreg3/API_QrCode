@@ -18,9 +18,9 @@ namespace API_QrCode.models
 
         public string ideValidade { get; set; }
 
-        [ForeignKey("Pessoas")]
+        [ForeignKey("Pessoa")]
         public string PIN { get; set; }
-
+        public Pessoa Pessoa { get; set; }
         public Byte? ideSituacao { get; set; }
 
         public string DataHoraAssociacao { get; set; }

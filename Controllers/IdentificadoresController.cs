@@ -29,10 +29,13 @@ namespace API_QrCode.Controllers
         }
 
         // GET: api/Identificadores/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Identificador>> GetIdentificador(string id)
+        [HttpGet("{numInterno}")]
+        public async Task<ActionResult<Identificador>> GetIdentificador(string numInterno)
         {
-            var identificador = await _context.Identificadores.FindAsync(id);
+            var identificador = await _context.Identificadores
+                .Include(i => i.Pessoa)
+                .Where(i => i.ideNumInterno == numInterno)
+                .FirstOrDefaultAsync();
 
             if (identificador == null)
             {
